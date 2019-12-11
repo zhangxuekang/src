@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>将高度和宽度联系起来的demo</title>
+  <style>
+    .box {
+      width: 500px;
+      height: 350px;
+      outline: 1px solid black;
+      position: relative;
+      left: 50px;
+      top: 50px;
+    }
+
+    .handle {
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      right: -1px;
+      bottom: -1px;
+    }
+
+    .handle:hover {
+      cursor: move;
+    }
+
+    .handle::after {
+      content: '这里可以拖动';
+      position: absolute;
+      display: inline-block;
+      width: 100px;
+      left: 15px;
+    }
+
+    .target {
+      background-color: burlywood;
+      width: 50%;
+      height: 0;
+      padding-bottom: 50%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .in {
+      background-color: darkgray;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      left: 20px;
+      top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="target">
+      <div class="in">
+      </div>
+    </div>
+    <div class="handle"></div>
+  </div>
+</body>
+<script src="./wdith-height.js">
+</script>
+
+</html>
