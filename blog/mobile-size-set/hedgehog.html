@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hedgehog</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: rgb(70, 62, 38);
+    }
+
+    .main {
+      background-image: url("./hedgehog.jpeg");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      position: absolute;
+      width: 720px;
+      height: 720px;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      transform-origin: center center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+  </div>
+</body>
+<script>
+  window.addEventListener('resize', updateSize)
+  window.addEventListener('load', updateSize)
+  function updateSize() {
+    const bodyW = document.documentElement.clientWidth;
+    const bodyH = document.documentElement.clientHeight;
+    const wScale = bodyW / 720;
+    const hScale = bodyH / 720;
+    const scale = Math.min(wScale, hScale);
+    const $main = document.querySelector('.main');
+    $main.style.transform = `translateX(-50%) translateY(-50%) scale(${scale})`;
+  }
+</script>
+
+</html>
